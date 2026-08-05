@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arroz Frito - Gastronomia Mundial</title>
+    <link rel="stylesheet" href="../styles/arrozfrito.css">
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500;700&family=Noto+Serif+SC:wght@700&display=swap');
+
+    </style>
+</head>
+<body>
+
+   
+    <main class="card-fried-rice">
+        <div class="icon-dish">🍚🔥</div>
+        <h1>Arroz Frito</h1>
+        <p class="description">A magia do <em>Wok Hei</em> (o sopro do wok). Um prato vibrante onde grãos soltinhos saltam nas chamas, absorvendo aromas defumados, shoyu caramelizado e o frescor da cebolinha.</p>
+        
+        <div class="btn-container">
+            <button class="btn-modal" data-modal="modal-origem">Origem & Tempo</button>
+            <button class="btn-modal" data-modal="modal-ingredientes">Ingredientes</button>
+        </div>
+    </main>
+
+    
+    <div class="modal-overlay" id="modal-origem">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">A Arte do Wok</h2>
+            
+            <div class="modal-info-group">
+                <strong>País de Origem</strong>
+                <span>China 🇨🇳 (Nascido historicamente como uma forma deliciosa de evitar o desperdício do arroz do dia anterior, transformando-o em uma obra-prima).</span>
+            </div>
+
+            <div class="modal-info-group">
+                <strong>Tempo Médio de Preparo</strong>
+                <span>10 a 15 minutos (O segredo é a agilidade e o fogo altíssimo, mas exige que o arroz tenha sido cozido e guardado na geladeira um dia antes).</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal-overlay" id="modal-ingredientes">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Base do Prato</h2>
+            
+            <div class="modal-info-group">
+                <strong>Os Três Principais</strong>
+                <ul>
+                    <li>Arroz branco cozido "adormecido" (frio e seco da geladeira, para não empapar)</li>
+                    <li>Ovos mexidos e aromáticos (Alho, gengibre e óleo de gergelim torrado)</li>
+                    <li>Temperos escuros e frescos (Molho Shoyu para umami e cebolinha fresca para o contraste visual e de sabor)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script/arrozfrito.js"></script>
+</body>
+</html>

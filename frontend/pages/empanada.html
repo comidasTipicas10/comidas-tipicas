@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empanada - Gastronomia Mundial</title>
+    <link rel="stylesheet" href="../styles/empanada.css">
+    <style>
+     
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@400;500;700&display=swap');
+
+    </style>
+</head>
+<body>
+
+       <main class="card-empanada">
+        <div class="icon-dish">🥟</div>
+        <h1>Empanada</h1>
+        <p class="description">Uma clássica joia artesanal da gastronomia sul-americana. Massas douradas assadas ao forno, dobradas delicadamente com o tradicional <em>repulgue</em> e recheadas com um guisado suculento e bem temperado.</p>
+        
+        <div class="btn-container">
+            <button class="btn-modal" data-modal="modal-origem">Origem & Tempo</button>
+            <button class="btn-modal" data-modal="modal-ingredientes">Ingredientes</button>
+        </div>
+    </main>
+
+  
+    <div class="modal-overlay" id="modal-origem">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Tradición Criolla</h2>
+            
+            <div class="modal-info-group">
+                <strong>País de Origem</strong>
+                <span>Argentina 🇦🇷 e Chile 🇨🇱 (Com herança histórica da Espanha e do Oriente Médio).</span>
+            </div>
+
+            <div class="modal-info-group">
+                <strong>Tempo Médio de Preparo</strong>
+                <span>1 hora a 1h30 (Incluindo o descanso da massa de trigo e o cozimento lento do recheio).</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal-overlay" id="modal-ingredientes">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Base do Prato</h2>
+            
+            <div class="modal-info-group">
+                <strong>Os Três Principais</strong>
+                <ul>
+                    <li>Massa caseira (Farinha de trigo, água, sal e gordura bovina ou manteiga)</li>
+                    <li>Carne bovina cortada à faca (Temperada com cominho e pimentón doce)</li>
+                    <li>Cebola abundante refogada (Com ovo cozido e azeitonas picadas)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+ <script src="../script/empanada.js"></script>
+</body>
+</html>

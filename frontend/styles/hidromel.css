@@ -1,0 +1,215 @@
+  :root {
+            --honey-gold: #E5A93B;
+            --amber-dark: #C7791E;
+            --wood-brown: #3E2723;
+            --iron-black: #1c1814;
+            --parchment-bg: #F4E8D1;
+            --pure-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            color: var(--iron-black);
+            background-color: var(--wood-brown);
+            /* Simulação de textura de madeira/taverna escura no fundo */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Container Principal Estilo Pergaminho/Madeira */
+        .card-hidromel {
+            background-color: var(--parchment-bg);
+            border: 8px solid var(--iron-black);
+            padding: 4rem 3rem;
+            max-width: 550px;
+            border-radius: 4px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            position: relative;
+        }
+
+        /* Detalhe interno simulando uma borda de ouro/âmbar */
+        .card-hidromel::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            border: 2px solid var(--amber-dark);
+            pointer-events: none;
+        }
+
+        h1 {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 3.8rem;
+            color: var(--iron-black);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 0px rgba(229, 169, 59, 0.4);
+            letter-spacing: 2px;
+        }
+
+        .icon-dish {
+            font-size: 4.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        p.description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            color: var(--wood-brown);
+            font-weight: 600;
+        }
+
+        /* Container dos Botões */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Botões Rústicos */
+        .btn-modal {
+            background-color: var(--iron-black);
+            color: var(--honey-gold);
+            border: 2px solid var(--amber-dark);
+            padding: 12px 20px;
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+            flex: 1;
+            text-transform: uppercase;
+        }
+
+        .btn-modal:hover {
+            background-color: var(--amber-dark);
+            color: var(--iron-black);
+            border-color: var(--iron-black);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        /* --- Estilos dos Modais --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(28, 24, 20, 0.85); /* Fundo bem escuro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--parchment-bg);
+            padding: 3rem;
+            max-width: 420px;
+            width: 90%;
+            position: relative;
+            text-align: left;
+            border: 4px solid var(--wood-brown);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8), inset 0 0 20px rgba(199, 121, 30, 0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-title {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 2rem;
+            color: var(--wood-brown);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--amber-dark);
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .modal-info-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-info-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-info-group strong {
+            display: block;
+            color: var(--amber-dark);
+            font-size: 1.1rem;
+            font-family: 'MedievalSharp', cursive;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+        }
+
+        .modal-info-group span,
+        .modal-info-group ul li {
+            font-size: 1.1rem;
+            color: var(--iron-black);
+        }
+
+        .modal-info-group ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .modal-info-group ul li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 25px;
+            font-weight: 600;
+        }
+
+        /* Marcador de lista em formato de abelha/mel */
+        .modal-info-group ul li::before {
+            content: '🐝';
+            font-size: 0.9rem;
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-family: 'MedievalSharp', cursive;
+            font-size: 2rem;
+            color: var(--iron-black);
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: var(--amber-dark);
+        }
