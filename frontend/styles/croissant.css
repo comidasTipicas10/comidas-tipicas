@@ -1,0 +1,204 @@
+:root {
+            --french-navy: #1B263B;      /* Azul elegante de padaria clássica */
+            --butter-gold: #E5B13A;      /* Dourado da manteiga/massa assada */
+            --crust-brown: #8B4513;      /* Marrom da casquinha crocante */
+            --cream-white: #FCFAEF;      /* Fundo creme leve */
+            --pure-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--french-navy);
+            background-color: var(--cream-white);
+            /* Simulação sutil de textura de papel manteiga/mármore de padaria */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Container Principal Elegante */
+        .card-croissant {
+            background-color: var(--pure-white);
+            border: 1px solid #EBE5D9;
+            padding: 4rem 3.5rem;
+            max-width: 550px;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(27, 38, 59, 0.08);
+            position: relative;
+        }
+
+        /* Borda dupla decorativa clássica (estilo menu francês) */
+        .card-croissant::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(229, 177, 58, 0.3);
+            pointer-events: none;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--french-navy);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .icon-dish {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        p.description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            color: #4A5568;
+            font-style: italic;
+        }
+
+        /* Container dos Botões */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+            z-index: 2; /* Para ficar acima da borda dupla */
+        }
+
+        /* Botões Estilo Boutique */
+        .btn-modal {
+            background-color: var(--pure-white);
+            color: var(--french-navy);
+            border: 1px solid var(--french-navy);
+            padding: 12px 24px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            flex: 1;
+        }
+
+        .btn-modal:hover {
+            background-color: var(--french-navy);
+            color: var(--butter-gold);
+            border-color: var(--french-navy);
+        }
+
+        /* --- Estilos dos Modais --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(27, 38, 59, 0.85); /* Fundo escuro azulado */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--cream-white);
+            padding: 3rem;
+            max-width: 420px;
+            width: 90%;
+            position: relative;
+            text-align: left;
+            border-top: 4px solid var(--butter-gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--french-navy);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(229, 177, 58, 0.4);
+            padding-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .modal-info-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-info-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-info-group strong {
+            display: block;
+            color: var(--crust-brown);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+        }
+
+        .modal-info-group ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .modal-info-group ul li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 20px;
+            color: var(--french-navy);
+        }
+
+        .modal-info-group ul li::before {
+            content: '✨';
+            font-size: 0.7rem;
+            position: absolute;
+            left: 0;
+            top: 7px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            color: #A0AEC0;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: var(--crust-brown);
+        }

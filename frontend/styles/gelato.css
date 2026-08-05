@@ -1,0 +1,213 @@
+:root {
+            --vanilla-cream: #FFFDE7;
+            --strawberry-pink: #FF8DA1;
+            --pistachio-green: #A3D39C;
+            --chocolate-brown: #5D4037;
+            --pure-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--chocolate-brown);
+            background-color: var(--vanilla-cream);
+            /* Fundo com listras verticais sutis remetendo aos toldos das gelaterias italianas */
+            background-image: repeating-linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.4),
+                rgba(255, 255, 255, 0.4) 40px,
+                transparent 40px,
+                transparent 80px
+            );
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Container Principal Suave e Arredondado */
+        .card-gelato {
+            background-color: var(--pure-white);
+            border: 4px solid var(--pistachio-green);
+            padding: 4rem 3rem;
+            max-width: 550px;
+            border-radius: 40px 40px 15px 15px; /* Topo bem arredondado como uma bola de gelato */
+            box-shadow: 0 15px 35px rgba(93, 64, 55, 0.1);
+            position: relative;
+        }
+
+        /* Detalhe superior colorido */
+        .card-gelato::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 8px;
+            background-color: var(--strawberry-pink);
+            border-radius: 0 0 10px 10px;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.8rem;
+            color: var(--strawberry-pink);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 0px rgba(255, 141, 161, 0.2);
+            line-height: 1.2;
+        }
+
+        .icon-dish {
+            font-size: 4.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        p.description {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            color: #795548;
+            font-weight: 600;
+        }
+
+        /* Container dos Botões */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Botões Arredondados e Charmosos */
+        .btn-modal {
+            background-color: var(--pure-white);
+            color: var(--pistachio-green);
+            border: 2px solid var(--pistachio-green);
+            padding: 12px 24px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 25px; /* Bordas bem redondas */
+            flex: 1;
+        }
+
+        .btn-modal:hover {
+            background-color: var(--pistachio-green);
+            color: var(--pure-white);
+            box-shadow: 0 5px 15px rgba(163, 211, 156, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* --- Estilos dos Modais --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(93, 64, 55, 0.7); /* Fundo marrom translúcido */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--pure-white);
+            padding: 3rem;
+            max-width: 420px;
+            width: 90%;
+            position: relative;
+            text-align: left;
+            border-radius: 20px;
+            border-top: 6px solid var(--strawberry-pink);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            color: var(--pistachio-green);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px dashed rgba(163, 211, 156, 0.5);
+            padding-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .modal-info-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-info-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-info-group strong {
+            display: block;
+            color: var(--strawberry-pink);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+        }
+
+        .modal-info-group ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .modal-info-group ul li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 25px;
+            color: var(--chocolate-brown);
+            font-weight: 600;
+        }
+
+        .modal-info-group ul li::before {
+            content: '🍦';
+            font-size: 0.9rem;
+            position: absolute;
+            left: 0;
+            top: 6px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            color: #D7CCC8;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: var(--strawberry-pink);
+        }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tacos - Gastronomia Mundial</title>
+    <link rel="stylesheet" href="../styles/tacos.css">
+    <style>
+       
+        @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@400;600;700&display=swap');
+    </style>
+</head>
+<body>
+
+    
+    <main class="card-taco">
+        <div class="icon-dish">🌮</div>
+        <h1>Tacos</h1>
+        <p class="description">Uma verdadeira festa para o paladar! A clássica e vibrante comida de rua mexicana que une a textura rústica da tortilla a recheios intensos, frescos e levemente picantes.</p>
+        
+        <div class="btn-container">
+            <button class="btn-modal" data-modal="modal-origem">Origem & Tempo</button>
+            <button class="btn-modal" data-modal="modal-ingredientes">Ingredientes</button>
+        </div>
+    </main>
+
+   
+    <div class="modal-overlay" id="modal-origem">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">¡La Historia!</h2>
+            
+            <div class="modal-info-group">
+                <strong>País de Origem</strong>
+                <span>México 🇲🇽</span>
+            </div>
+
+            <div class="modal-info-group">
+                <strong>Tempo Médio de Preparo</strong>
+                <span>30 a 45 minutos (Considerando o preparo dos recheios frescos e da carne)</span>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="modal-overlay" id="modal-ingredientes">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Base do Prato</h2>
+            
+            <div class="modal-info-group">
+                <strong>Os Três Principais</strong>
+                <ul>
+                    <li>Tortilla rústica (de milho ou trigo)</li>
+                    <li>Carne marinada (Ex: <em>Al Pastor</em>, <em>Carnitas</em> ou Frango)</li>
+                    <li>Toque fresco (Pico de gallo, coentro, cebola e limão)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script/tacos.js"></script>
+</body>
+</html>

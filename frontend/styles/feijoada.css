@@ -1,0 +1,201 @@
+:root {
+            --clay-orange: #C35817; /* Remete à panela de barro e à laranja */
+            --bean-black: #2A2320;  /* Remete ao caldo do feijão */
+            --collard-green: #3B5E2B; /* Remete à couve */
+            --warm-white: #FAF6F0;  /* Fundo quente e acolhedor */
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--bean-black);
+            background-color: var(--warm-white);
+            /* Simulação sutil de textura rústica/terrosa */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Container Principal */
+        .card-feijoada {
+            background-color: var(--card-bg);
+            border: 1px solid #E5D9C5;
+            padding: 4rem 3rem;
+            max-width: 550px;
+            border-radius: 8px; /* Cantos levemente arredondados para um ar mais acolhedor */
+            box-shadow: 0 15px 35px rgba(42, 35, 32, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Detalhe Superior (remetendo às cores do prato/Brasil) */
+        .card-feijoada::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--collard-green), var(--clay-orange));
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--bean-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .icon-dish {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        p.description {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            color: #554;
+        }
+
+        /* Container dos Botões */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Botões para abrir os Modais */
+        .btn-modal {
+            background-color: var(--warm-white);
+            color: var(--bean-black);
+            border: 2px solid var(--clay-orange);
+            padding: 12px 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            flex: 1;
+        }
+
+        .btn-modal:hover {
+            background-color: var(--clay-orange);
+            color: #FFF;
+        }
+
+        /* --- Estilos base dos Modais --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(42, 35, 32, 0.85); /* Fundo escuro mais quente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--warm-white);
+            padding: 3rem;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            text-align: left;
+            border-top: 5px solid var(--clay-orange);
+            border-radius: 6px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-title {
+            font-family: 'Lora', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #D9CDB8;
+            padding-bottom: 0.5rem;
+            color: var(--bean-black);
+        }
+
+        .modal-info-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-info-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-info-group strong {
+            display: block;
+            color: var(--clay-orange);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+        }
+
+        .modal-info-group ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .modal-info-group ul li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 18px;
+            color: #4A3F39;
+        }
+
+        .modal-info-group ul li::before {
+            content: '🍲';
+            font-size: 0.7rem;
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: #A69B8D;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: var(--clay-orange);
+        }

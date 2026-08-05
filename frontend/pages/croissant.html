@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Croissant - Gastronomia Mundial</title>
+    <link rel="stylesheet" href="../styles/croissant.css">
+    <style>
+       
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Lato:wght@400;700&display=swap');
+
+    </style>
+</head>
+<body>
+
+    <main class="card-croissant">
+        <div class="icon-dish">🥐</div>
+        <h1>Croissant</h1>
+        <p class="description">"Uma obra-prima da panificação clássica. Camadas finas e delicadas de massa perfeitamente folhada, resultando em um exterior dourado e crocante com um interior macio, aerado e amanteigado."</p>
+        
+        <div class="btn-container">
+            <button class="btn-modal" data-modal="modal-origem">Origem & Tempo</button>
+            <button class="btn-modal" data-modal="modal-ingredientes">Ingredientes</button>
+        </div>
+    </main>
+
+   
+    <div class="modal-overlay" id="modal-origem">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">L'Histoire</h2>
+            
+            <div class="modal-info-group">
+                <strong>País de Origem</strong>
+                <span>França 🇫🇷 (Aperfeiçoado em Paris, mas com raízes históricas no <em>Kipferl</em> da Áustria 🇦🇹)</span>
+            </div>
+
+            <div class="modal-info-group">
+                <strong>Tempo Médio de Preparo</strong>
+                <span>24 a 48 horas (O segredo da textura perfeita exige paciência: a massa precisa de longos períodos de descanso a frio entre as laminações).</span>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="modal-overlay" id="modal-ingredientes">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Base do Prato</h2>
+            
+            <div class="modal-info-group">
+                <strong>Os Três Principais</strong>
+                <ul>
+                    <li>Farinha de trigo (de força média, para estrutura)</li>
+                    <li>Manteiga extrafina de alta qualidade (o coração do sabor e das camadas)</li>
+                    <li>Fermento biológico (para o aspecto aerado)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+   <script src="../script/croissant.js"></script>
+</body>
+</html>

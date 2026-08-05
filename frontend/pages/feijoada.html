@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feijoada - Gastronomia Mundial</title>
+    <link rel="stylesheet" href="../styles/feijoada.css">
+    <style>
+      
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;1,500&family=Open+Sans:wght@400;600&display=swap');
+
+    
+    </style>
+</head>
+<body>
+
+ 
+    <main class="card-feijoada">
+        <div class="icon-dish">🥘</div>
+        <h1>Feijoada</h1>
+        <p class="description">Um clássico absoluto da alma brasileira. Um ensopado rico, robusto e reconfortante, onde o caldo espesso e as carnes curadas se encontram em perfeita harmonia.</p>
+        
+        <div class="btn-container">
+            <button class="btn-modal" data-modal="modal-origem">Origem & Tempo</button>
+            <button class="btn-modal" data-modal="modal-ingredientes">Ingredientes</button>
+        </div>
+    </main>
+
+    
+    <div class="modal-overlay" id="modal-origem">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Detalhes Históricos</h2>
+            
+            <div class="modal-info-group">
+                <strong>País de Origem</strong>
+                <span>Brasil 🇧🇷 (Com influências de cozidos europeus adaptados à cultura local)</span>
+            </div>
+
+            <div class="modal-info-group">
+                <strong>Tempo Médio de Preparo</strong>
+                <span>2 a 3 horas (Requer planejamento prévio para o dessalgue das carnes e remolho do feijão)</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal-overlay" id="modal-ingredientes">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Base do Prato</h2>
+            
+            <div class="modal-info-group">
+                <strong>Os Três Principais</strong>
+                <ul>
+                    <li>Feijão preto (caldo grosso e brilhante)</li>
+                    <li>Carnes salgadas e defumadas (Carne-seca, lombo, costelinha e linguiças)</li>
+                    <li>Acompanhamentos (Couve-manteiga refogada, farofa e laranja)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+     <script src="../script/feijoada.js"></script>
+</body>
+</html>
