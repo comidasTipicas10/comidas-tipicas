@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paella - Gastronomia Mundial</title>
+    <link rel="stylesheet" href="../styles/paella.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;700&display=swap');
+
+    </style>
+</head>
+<body>
+
+   
+    <main class="card-paella">
+        <div class="icon-dish">🥘</div>
+        <h1>Paella</h1>
+        <p class="description">A alma e o sol da gastronomia espanhola. Nascida nas terras de Valência, reúne grãos de arroz cozidos lentamente em um caldo aromático de açafrão, frutos do mar ou carnes, formando o irresistível e crocante <em>socarrat</em> no fundo da frigideira.</p>
+        
+        <div class="btn-container">
+            <button class="btn-modal" data-modal="modal-origem">Origem & Tempo</button>
+            <button class="btn-modal" data-modal="modal-ingredientes">Ingredientes</button>
+        </div>
+    </main>
+
+    
+    <div class="modal-overlay" id="modal-origem">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Tradición Española</h2>
+            
+            <div class="modal-info-group">
+                <strong>País de Origem</strong>
+                <span>Espanha 🇪🇸 (Comunidade Valenciana, criada originalmente pelos camponeses nos campos ao redor da lagoa de Albufera).</span>
+            </div>
+
+            <div class="modal-info-group">
+                <strong>Tempo Médio de Preparo</strong>
+                <span>45 a 60 minutos (Exige fogo bem distribuído e o tempo exato sem mexer para formar a crosta dourada perfeita).</span>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="modal-overlay" id="modal-ingredientes">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Base do Prato</h2>
+            
+            <div class="modal-info-group">
+                <strong>Os Três Principais</strong>
+                <ul>
+                    <li>Arroz Bomba (grão curto que absorve intensamente o caldo sem desmanchar)</li>
+                    <li>Açafrão puro em estigmas (confere a cor dourada inconfundível e aroma terra-floral)</li>
+                    <li>Proteínas e vegetais (Frutos do mar como camarão e mexilhão, ou frango, coelho e vagem na receita valenciana)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+   <script src="../script/paella.js"></script>
+</body>
+</html>
