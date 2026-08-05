@@ -1,0 +1,197 @@
+:root {
+            --japan-red: #CE1126;
+            --pure-white: #FFFFFF;
+            --ink-black: #1A1A1A;
+            --rice-paper: #FDFDFD;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--ink-black);
+            background-color: var(--rice-paper);
+            /* Simulação sutil de textura de papel de arroz */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Container Principal Simétrico */
+        .card-sushi {
+            background-color: var(--pure-white);
+            border: 1px solid #EAEAEA;
+            padding: 4rem 3rem;
+            max-width: 550px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* Detalhe Vermelho Superior (remetendo à bandeira e ao minimalismo) */
+        .card-sushi::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--japan-red);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .kanji {
+            font-size: 5rem;
+            color: var(--japan-red);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        p.description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            color: #555;
+        }
+
+        /* Container dos Botões para manter simetria */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Botões para abrir os Modais */
+        .btn-modal {
+            background-color: var(--ink-black);
+            color: var(--pure-white);
+            border: 1px solid var(--ink-black);
+            padding: 12px 20px;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+            flex: 1;
+        }
+
+        .btn-modal:hover {
+            background-color: var(--japan-red);
+            border-color: var(--japan-red);
+        }
+
+        /* --- Estilos base dos Modais --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 26, 26, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--pure-white);
+            padding: 3rem;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            text-align: left;
+            border-top: 4px solid var(--japan-red);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #EEE;
+            padding-bottom: 0.5rem;
+            color: var(--ink-black);
+        }
+
+        .modal-info-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-info-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-info-group strong {
+            display: block;
+            color: var(--japan-red);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .modal-info-group ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .modal-info-group ul li {
+            padding: 4px 0;
+            position: relative;
+            padding-left: 15px;
+            color: #444;
+        }
+
+        .modal-info-group ul li::before {
+            content: '•';
+            color: var(--japan-red);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--japan-red);
+        }

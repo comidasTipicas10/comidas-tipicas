@@ -1,11 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sushi - Gastronomia Mundial</title>
+    <link rel="stylesheet" href="../styles/sushi.css">
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
+
+    </style>
 </head>
 <body>
+
     
+    <main class="card-sushi">
+        <div class="kanji">寿司</div>
+        <h1>Sushi</h1>
+        <p class="description">Uma obra-prima da precisão e do minimalismo. O equilíbrio perfeito entre textura, frescor e sabor, refletindo a pureza da culinária tradicional japonesa.</p>
+        
+        <div class="btn-container">
+            
+            <button class="btn-modal" data-modal="modal-origem">Origem & Tempo</button>
+            <button class="btn-modal" data-modal="modal-ingredientes">Ingredientes</button>
+        </div>
+    </main>
+
+    
+    <div class="modal-overlay" id="modal-origem">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Detalhes Históricos</h2>
+            
+            <div class="modal-info-group">
+                <strong>País de Origem</strong>
+                <span>Japão (日本)</span>
+            </div>
+
+            <div class="modal-info-group">
+                <strong>Tempo Médio de Preparo</strong>
+                <span>45 a 60 minutos (incluindo o cuidado essencial no preparo e resfriamento do arroz)</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal-overlay" id="modal-ingredientes">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Base do Prato</h2>
+            
+            <div class="modal-info-group">
+                <strong>Os Três Principais</strong>
+                <ul>
+                    <li>Arroz japonês avinagrado (<em>Shari</em>)</li>
+                    <li>Peixe cru extremamente fresco (<em>Neta</em> - ex: Atum, Salmão)</li>
+                    <li>Alga marinha seca e tostada (<em>Nori</em>)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script/sushi.js"></script>
 </body>
 </html>
