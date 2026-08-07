@@ -7,8 +7,8 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background: #121214;
-    color: #fff;
+    background: #2a1f18;
+    color: #f7efe8;
     font-family: 'Montserrat', 'Segoe UI', sans-serif;
 }
 a{
@@ -33,7 +33,7 @@ img{
 
 :root{
     --bg: #121214;
-    --card: #1A1A1C;
+    --card: #c8bfbf;
     --gold-light:#D9A857;
     --white:#ffffff;
     --text:#d8d8d8;
@@ -43,12 +43,13 @@ img{
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/comidas-tipicas-pelo-mundo-mapa.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/culinarias.png);
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 
@@ -97,7 +98,7 @@ img{
     width:90%;
     max-width:1280px;
     margin: 50px;
-    display:grid;
+    display: grid;
     grid-template-columns:repeat(3,1fr);
     gap:35px;
 }
@@ -130,7 +131,6 @@ img{
 }
 .card-conteudo i{
     font-size:2rem;
-    color:var(--gold);
     margin-bottom:25px;
 }
 .card-conteudo h3{
@@ -138,5 +138,6 @@ img{
     font-weight:600;
     line-height:1.2;
     margin-bottom:18px;
+    color: #2a1f18;
 }
 
