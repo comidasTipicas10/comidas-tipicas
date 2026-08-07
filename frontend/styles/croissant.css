@@ -203,6 +203,30 @@
             color: var(--crust-brown);
         }
 
+        .home-btn-container {
+            margin-top: 1rem;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--crust-brown);
+            border: 1px solid var(--crust-brown);
+            padding: 10px 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .btn-home:hover {
+            background-color: var(--crust-brown);
+            color: var(--cream-white);
+        }
+
         #modal-imagem .modal-content {
             padding: 1rem;
             max-width: min(90vw, 700px);
