@@ -199,3 +199,18 @@
         .close-btn:hover {
             color: var(--clay-orange);
         }
+
+        #modal-imagem .modal-content {
+            padding: 1rem;
+            max-width: min(90vw, 700px);
+        }
+
+        .modal-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: contain;
+            margin: 0 auto;
+            border-radius: 6px;
+        }
