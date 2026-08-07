@@ -1,0 +1,215 @@
+:root {
+            --gravy-brown: #4A2E1B;     /* Marrom do molho gravy */
+            --fry-gold: #E8A838;        /* Dourado da batata frita */
+            --curd-cream: #FFF8E7;      /* Creme dos cheese curds */
+            --canadian-red: #C8102E;    /* Vermelho canadense */
+            --diner-dark: #231C18;      /* Fundo escuro aconchegante */
+            --pure-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--diner-dark);
+            background-color: var(--diner-dark);
+            /* Fundo com textura e padrão xadrez sutil remetendo ao inverno e cabanas de Quebec */
+            background-image: 
+                radial-gradient(circle at center, rgba(74, 46, 27, 0.4) 0%, rgba(35, 28, 24, 0.95) 100%),
+                repeating-linear-gradient(45deg, rgba(200, 16, 46, 0.03) 0, rgba(200, 16, 46, 0.03) 10px, transparent 0, transparent 20px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Container Principal */
+        .card-poutine {
+            background-color: var(--curd-cream);
+            border: 4px solid var(--fry-gold);
+            padding: 4rem 3.5rem;
+            max-width: 550px;
+            border-radius: 16px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Detalhe superior vermelho canadense */
+        .card-poutine::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: var(--canadian-red);
+        }
+
+        h1 {
+            font-family: 'Patua One', cursive;
+            font-size: 3.8rem;
+            color: var(--gravy-brown);
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+            text-shadow: 2px 2px 0px rgba(232, 168, 56, 0.3);
+        }
+
+        .icon-dish {
+            font-size: 4.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        p.description {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            color: #5C4333;
+            font-weight: 500;
+        }
+
+        /* Container dos Botões */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Botões Estilo Diner */
+        .btn-modal {
+            background-color: var(--gravy-brown);
+            color: var(--curd-cream);
+            border: 2px solid var(--fry-gold);
+            padding: 14px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 8px;
+            flex: 1;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 0 var(--canadian-red);
+        }
+
+        .btn-modal:hover {
+            background-color: var(--canadian-red);
+            color: var(--pure-white);
+            border-color: var(--canadian-red);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 var(--gravy-brown);
+        }
+
+        .btn-modal:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 var(--gravy-brown);
+        }
+
+        /* --- Estilos dos Modais --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(35, 28, 24, 0.88);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--curd-cream);
+            padding: 3rem;
+            max-width: 420px;
+            width: 90%;
+            position: relative;
+            text-align: left;
+            border-radius: 12px;
+            border-top: 6px solid var(--fry-gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-title {
+            font-family: 'Patua One', cursive;
+            font-size: 1.8rem;
+            color: var(--gravy-brown);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px dashed var(--fry-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .modal-info-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-info-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-info-group strong {
+            display: block;
+            color: var(--canadian-red);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+        }
+
+        .modal-info-group ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .modal-info-group ul li {
+            padding: 6px 0;
+            position: relative;
+            padding-left: 24px;
+            color: var(--diner-dark);
+            font-weight: 500;
+        }
+
+        .modal-info-group ul li::before {
+            content: '🍟';
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 7px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            color: #A38C7A;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: var(--canadian-red);
+        }
