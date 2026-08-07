@@ -13,14 +13,14 @@
     <header class="hero">
         <div class="hero-content">
             <h1>COMIDAS TIPICAS</h1>
-            <button id="scrollDown" class="scroll-button"> <i class="fa-solid fa-chevron-down"></i> </button>
+            <button id="scrollDown" class="scroll-button" type="button" aria-label="Ir para a listagem">
+                <span><b> EXPLORAR </b></span>
+            </button>
         </div>
     </header>
 
     <main id="explorar">
         <section class="explorar">
-            <span class="subtitulo">EXPLORAR</span>
-            <h2>Listagem</h2>
             <div class="cards">
                 <article class="card" onclick="">
                     <img src="" alt="">
@@ -65,5 +65,16 @@
             </div>
         </section>
     </main>
+
+    <script>
+        const scrollButton = document.getElementById('scrollDown');
+        const exploreSection = document.getElementById('explorar');
+
+        if (scrollButton && exploreSection) {
+            scrollButton.addEventListener('click', () => {
+                exploreSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+    </script>
 </body>
 </html>
