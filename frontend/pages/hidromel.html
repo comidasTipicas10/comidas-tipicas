@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hidromel - Gastronomia Mundial</title>
     <link rel="stylesheet" href="../styles/hidromel.css">
     <style>
-        
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=MedievalSharp&display=swap');
-
     </style>
 </head>
+
 <body>
 
-   
+
     <main class="card-hidromel">
         <div class="icon-dish">🍯🍻</div>
         <h1>Hidromel</h1>
-        <p class="description">A bebida dos deuses e dos guerreiros vikings. O néctar mais antigo da humanidade, onde a doçura pura do mel se transforma em ouro líquido através da magia do tempo e da fermentação.</p>
-        
+        <p class="description">A bebida dos deuses e dos guerreiros vikings. O néctar mais antigo da humanidade, onde a
+            doçura pura do mel se transforma em ouro líquido através da magia do tempo e da fermentação.</p>
+
         <div class="btn-container">
-            <button class="btn-modal" data-modal="modal-origem">Origem & Tempo</button>
-            <button class="btn-modal" data-modal="modal-ingredientes">Ingredientes</button>
+            <button class="btn-modal" data-modal="modal-origem">Origem</button>
+            <button class="btn-modal" data-modal="modal-ingredientes">Preparo</button>
         </div>
     </main>
 
-   
+
     <div class="modal-overlay" id="modal-origem">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2 class="modal-title">As Crônicas</h2>
-            
+
             <div class="modal-info-group">
                 <strong>Origem Histórica</strong>
-                <span>Global 🌍 (Fortemente associado à cultura Nórdica ᛟ, Celta e Medieval, mas consumido pelas civilizações mais antigas do mundo).</span>
+                <span>Global 🌍 (Fortemente associado à cultura Nórdica ᛟ, Celta e Medieval, mas consumido pelas
+                    civilizações mais antigas do mundo).</span>
             </div>
 
             <div class="modal-info-group">
-                <strong>Tempo de Preparo</strong>
-                <span>1 a 6 meses (Semanas de fermentação ativa borbulhante, seguidas de longos meses de maturação e envelhecimento em garrafa ou barril de carvalho).</span>
+                <strong>História</strong>
+                <span>Considerada uma das bebidas alcoólicas mais antigas da humanidade, a história do hidromel remonta
+                    a mais de 10 mil anos, precedendo a cerveja e o vinho. Surgida espontaneamente da fermentação do mel
+                    de abelhas misturado à água da chuva, a bebida ganhou aura sagrada entre gregos, maias, chineses e,
+                    especialmente, os povos nórdicos, que a associavam aos deuses da mitologia. Embora tenha perdido
+                    espaço para outras bebidas ao longo dos séculos, o hidromel manteve seu status lendário e vivencia
+                    hoje um forte renascimento artesanal no mundo todo.</span>
             </div>
+
         </div>
     </div>
 
-   
+
     <div class="modal-overlay" id="modal-ingredientes">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2 class="modal-title">Base do Elixir</h2>
-            
+
             <div class="modal-info-group">
                 <strong>Os Três Principais</strong>
                 <ul>
@@ -57,10 +65,17 @@
                     <li>Levedura selvagem ou específica (o agente mágico que transforma o mel em álcool)</li>
                 </ul>
             </div>
+
+            <div class="modal-info-group">
+                <strong>Tempo de Preparo</strong>
+                <span>1 a 6 meses (Semanas de fermentação ativa borbulhante, seguidas de longos meses de maturação e
+                    envelhecimento em garrafa ou barril de carvalho).</span>
+            </div>
         </div>
     </div>
 
-      <script src="../script/hidromel.js"></script>
- 
+    <script src="../script/hidromel.js"></script>
+
 </body>
+
 </html>
